@@ -14,10 +14,10 @@ function writeHTML(apiData) {
     rating = apiData[i].rating;
     tags = apiData[i].tags.length;
 
-    content.innerHTML += `<div class="game">
-      <p class="name">Name: ${name}</p>
-      <p class="rating">Rating: ${rating}</p>
-      <p class="tags">Tags: ${tags}</p>
+    content.innerHTML += `<div class="card">
+      <p class="name">Name: <b>${name}</b></p>
+      <p class="rating">Rating: <b>${rating}</b></p>
+      <p class="tags">Tags: <b>${tags}</b></p>
     </div>`;
   }
 }
