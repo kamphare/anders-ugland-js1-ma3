@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>js1-ma3</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="grid">
@@ -14,12 +14,22 @@
         muted
         src="https://thumbs.gfycat.com/RemorsefulUnsungGoldenretriever-mobile.mp4"
       ></video>
-      <div class="content"></div>
+      <div class="content">
+        <div class="loading">
+          <div class="loading__text"><b>Loading</b></div>
+          <div class="loading__border">
+            <div class="loading__bar start"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-decoration"></div>
       <footer class="footer">
-        <div class="footer__border"></div>
-        <div class="footer__content"><p>&copy; No rights reserved</p></div>
+        <div class="footer__content">
+          <p><b>&copy; No rights reserved</b></p>
+        </div>
       </footer>
     </div>
   </body>
-  <script src="question-2.js"></script>
+  <script src="js/question-2.js"></script>
+  <script src="components/cardCreator.js"></script>
 </html>
