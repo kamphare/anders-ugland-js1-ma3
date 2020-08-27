@@ -1,38 +1,33 @@
 const content = document.querySelector('.content');
 const loading = document.querySelector('.loading');
-let fakeLoading;
-
-document.querySelector('.loading__bar').classList.remove('start');
-
 const url =
   'https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating';
 
-function removeLoading() {
-  fakeLoading = setTimeout(function () {
-    loading.remove();
-    fetchData();
-  }, 1000);
-}
+document.querySelector('.loading__bar').classList.remove('start');
 
-function generateHTML(apiData) {
-  apiData = apiData.results;
+function handleData(data) {
   let name;
   let rating;
   let tags;
 
+  loading.remove();
+
   for (i = 0; i < 8; i++) {
-    name = apiData[i].name;
-    rating = apiData[i].rating;
-    tags = apiData[i].tags.length;
+    name = data[i].name;
+    rating = data[i].rating;
+    tags = data[i].tags.length;
     createCard(name, rating, tags);
-    setTimeout(() => null, 300);
   }
 }
 
 function fetchData() {
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => generateHTML(data));
+  try {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => handleData(data.results));
+  } catch (error) {
+    handleError();
+  }
 }
 
-removeLoading();
+fetchData();

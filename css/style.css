@@ -53,22 +53,30 @@ html {
   height: 20px;
   background: linear-gradient(90deg, #25ffab, #ff25be);
   width: 100%;
-  transition: width 0.8s 0.2s;
+  transition: width 0.6s;
 }
 
 .loading__bar.start {
   width: 0%;
 }
 
+.error {
+  color: #f7f7f7;
+  font-size: 1.5rem;
+  grid-area: 1 / 1 / -1 / -1;
+  text-align: center;
+}
+
 .card {
+  color: #f7f7f7;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   border-radius: 2%;
   padding: 1rem 2rem;
   width: 100%;
-  height: 240px;
-  background: linear-gradient(#7125ff, #25deff);
+  min-height: 200px;
+  background: linear-gradient(-190deg, #7125ff, #25deff);
 }
 
 video {
